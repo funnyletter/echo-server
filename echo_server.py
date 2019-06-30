@@ -71,6 +71,8 @@ def server(log_buffer=sys.stderr):
                     # remember then ask your classmates or instructor for a clue.
                     # :)
                     if len(data) < 16:
+                        conn.send(data)
+                        print('sent "{0}". End of file.'.format(data.decode('utf8')))
                         break
             except Exception as e:
                 traceback.print_exc()
